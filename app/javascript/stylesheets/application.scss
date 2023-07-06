@@ -1,1 +1,8 @@
 @import "~bootstrap/scss/bootstrap.scss";
+
+@import "./features.scss";
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
