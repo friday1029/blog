@@ -1,0 +1,33 @@
+<div class="nav-scroller py-1 mb-3 border-bottom">
+  <nav class="nav nav-underline justify-content-between">
+    <a class="nav-item nav-link link-body-emphasis active" href="#">World</a>
+    <a class="nav-item nav-link link-body-emphasis" href="#">Science</a>
+    <a class="nav-item nav-link link-body-emphasis" href="#">Health</a>
+    <a class="nav-item nav-link link-body-emphasis" href="#">Style</a>
+    <a class="nav-item nav-link link-body-emphasis" href="#">Travel</a>
+  </nav>
+</div>
+<div class="py-5">
+  <div class="container">
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+<% 9.times.each do |i| %>
+      <div class="col">
+        <div class="card shadow-sm">
+          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+          <div class="card-body">
+            <p class="card-text"><%= i %>-This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-primary">繼續閱讀</button>
+
+              </div>
+              <small class="text-body-secondary">9 mins</small>
+            </div>
+          </div>
+        </div>
+      </div>
+<% end %>
+    </div>
+  </div>
+</div>
