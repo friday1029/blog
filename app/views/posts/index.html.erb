@@ -1,12 +1,4 @@
-<div class="nav-scroller py-1 mb-3 border-bottom">
-  <nav class="nav nav-underline justify-content-between">
-    <a class="nav-item nav-link link-body-emphasis active" href="#">World</a>
-    <a class="nav-item nav-link link-body-emphasis" href="#">Science</a>
-    <a class="nav-item nav-link link-body-emphasis" href="#">Health</a>
-    <a class="nav-item nav-link link-body-emphasis" href="#">Style</a>
-    <a class="nav-item nav-link link-body-emphasis" href="#">Travel</a>
-  </nav>
-</div>
+<%= render 'category_nav' %>
 <div class="py-5">
   <div class="container">
 
@@ -18,10 +10,7 @@
           <div class="card-body">
             <p class="card-text"><%= i %>-This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-primary">繼續閱讀</button>
-
-              </div>
+              <%= link_to "繼續閱讀", post_path(0), class: 'btn btn-sm btn-outline-primary' %>
               <small class="text-body-secondary">9 mins</small>
             </div>
           </div>
