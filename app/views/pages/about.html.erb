@@ -1,0 +1,81 @@
+<div class="row g-5">
+  <article class="about">
+    <h2 class="display-5 link-body-emphasis mb-1">關於我</h2>
+    <p class="about-meta">Update: January 1, 2021</p>
+    <%= image_tag 'https://picsum.photos/1600/900', width: '100%' %>
+    <h2>Blockquotes</h2>
+    <p>This is an example blockquote in action:</p>
+    <blockquote class="blockquote">
+      <p>Quoted text goes here.</p>
+    </blockquote>
+    <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
+    <h3>Example lists</h3>
+    <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout. This is an example unordered list:</p>
+    <ul>
+      <li>First list item</li>
+      <li>Second list item with a longer description</li>
+      <li>Third list item to close it out</li>
+    </ul>
+    <p>And this is an ordered list:</p>
+    <ol>
+      <li>First list item</li>
+      <li>Second list item with a longer description</li>
+      <li>Third list item to close it out</li>
+    </ol>
+    <p>And this is a definition list:</p>
+    <dl>
+      <dt>HyperText Markup Language (HTML)</dt>
+      <dd>The language used to describe and define the content of a Web page</dd>
+      <dt>Cascading Style Sheets (CSS)</dt>
+      <dd>Used to describe the appearance of Web content</dd>
+      <dt>JavaScript (JS)</dt>
+      <dd>The programming language used to build advanced Web sites and applications</dd>
+    </dl>
+    <h2>Inline HTML elements</h2>
+    <p>HTML defines a long list of available inline tags, a complete list of which can be found on the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Mozilla Developer Network</a>.</p>
+    <ul>
+      <li><strong>To bold text</strong>, use <code class="language-plaintext highlighter-rouge">&lt;strong&gt;</code>.</li>
+      <li><em>To italicize text</em>, use <code class="language-plaintext highlighter-rouge">&lt;em&gt;</code>.</li>
+      <li>Abbreviations, like <abbr title="HyperText Markup Language">HTML</abbr> should use <code class="language-plaintext highlighter-rouge">&lt;abbr&gt;</code>, with an optional <code class="language-plaintext highlighter-rouge">title</code> attribute for the full phrase.</li>
+      <li>Citations, like <cite>— Mark Otto</cite>, should use <code class="language-plaintext highlighter-rouge">&lt;cite&gt;</code>.</li>
+      <li><del>Deleted</del> text should use <code class="language-plaintext highlighter-rouge">&lt;del&gt;</code> and <ins>inserted</ins> text should use <code class="language-plaintext highlighter-rouge">&lt;ins&gt;</code>.</li>
+      <li>Superscript <sup>text</sup> uses <code class="language-plaintext highlighter-rouge">&lt;sup&gt;</code> and subscript <sub>text</sub> uses <code class="language-plaintext highlighter-rouge">&lt;sub&gt;</code>.</li>
+    </ul>
+    <p>Most of these elements are styled by browsers with few modifications on our part.</p>
+    <h2>Heading</h2>
+    <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
+    <h3>Sub-heading</h3>
+    <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
+    <pre><code>Example code block</code></pre>
+    <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
+  </article>
+</div>
+<hr class="my-4">
+<div class="row g-5">
+  <article class="contact-me">
+    <h2 class="display-5 link-body-emphasis mb-1">聯絡我</h2>
+    <form class="needs-validation" novalidate="">
+      <div class="row g-3">
+        <div class="col-12">
+          <label for="name" class="form-label">你的姓名</label>
+          <input type="text" class="form-control" id="name" placeholder="" value="" required="">
+          <div class="invalid-feedback">
+            姓名為必填
+          </div>
+        </div>
+        <div class="col-12">
+          <label for="email" class="form-label">你的Email</label>
+          <input type="email" class="form-control" id="email" placeholder="you@example.com">
+          <div class="invalid-feedback">
+            Email為必填
+          </div>
+        </div>
+        <div class="col-12">
+          <label for="content" class="form-label">內容</label>
+          <textarea class="form-control" name="content" id="content" rows="10"></textarea>
+        </div>
+        <button class="w-100 btn btn-primary btn-lg" type="submit">送出</button>
+      </div>
+    </form>
+  </article>
+</div>
