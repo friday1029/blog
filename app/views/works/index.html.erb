@@ -1,0 +1,36 @@
+<div class="container px-4 py-1 md-3" id="works">
+  <div class="row g-4 py-3">
+    <h2 class="pb-2 border-bottom">Side Projects</h2>
+    <div class="row g-3 py-1 row-cols-1 row-cols-lg-3">
+<% 3.times.each do |i|  %>
+      <div class="feature col">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"></use></svg>
+        </div>
+        <h3 class="fs-2 text-body-emphasis">Featured title</h3>
+        <p><%= i %>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+        <a href="#" class="icon-link">
+          Call to action
+        </a>
+      </div>
+<% end %>
+    </div>
+  <div>
+  <div class="row g-4 py-5">
+    <h2 class="pb-2 border-bottom">商業作品</h2>
+    <div class="row g-3 py-1 row-cols-1 row-cols-lg-3">
+<% 6.times.each do |i|  %>
+      <div class="feature col">
+        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"></use></svg>
+        </div>
+        <h3 class="fs-2 text-body-emphasis">Featured title</h3>
+        <p><%= i %>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+        <a href="#" class="icon-link">
+          Call to action
+        </a>
+      </div>
+<% end %>
+    </div>
+  <div>
+</div>
