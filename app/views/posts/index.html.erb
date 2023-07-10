@@ -1,10 +1,8 @@
 <%= render 'category_nav' %>
-<div class="container px-4 py-4">
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 <% 9.times.each do |i| %>
-    <div class="col">
-      <%= render 'card', link_path: post_path(0) %>
-    </div>
-<% end %>
+  <div class="col">
+    <%= render 'card', link_path: post_path(0) %>
   </div>
+<% end %>
 </div>
