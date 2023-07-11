@@ -1,0 +1,5 @@
+<% flash.map do |type, message| %>
+  <% notice_types = { notice: :info,  alert: :warning}%>
+  <% notice_type = notice_types[type.to_sym] || type.to_sym %>
+  <%= notice_type %>:<%= message %>
+<% end %>

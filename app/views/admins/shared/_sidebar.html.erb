@@ -87,10 +87,10 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link d-flex align-items-center gap-2" href="#">
+          <%= link_to destroy_admin_session_path, class: "nav-link d-flex align-items-center gap-2", method: :delete do %>
             <svg class="bi"><use xlink:href="#door-closed"/></svg>
             Sign out
-          </a>
+          <% end %>
         </li>
       </ul>
     </div>
