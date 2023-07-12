@@ -1,0 +1,42 @@
+<%= form_with(model: [:admins, work]) do |form| %>
+  <% if work.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(work.errors.count, "error") %> prohibited this work from being saved:</h2>
+
+      <ul>
+        <% work.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name_zh %>
+    <%= form.text_field :name_zh %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name_en %>
+    <%= form.text_field :name_en %>
+  </div>
+
+  <div class="field">
+    <%= form.label :site_url %>
+    <%= form.text_field :site_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :desc_zh %>
+    <%= form.text_area :desc_zh %>
+  </div>
+
+  <div class="field">
+    <%= form.label :desc_en %>
+    <%= form.text_area :desc_en %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

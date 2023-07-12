@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   namespace :admins, path: 'yellow_mouse_3847' do 
     get '/', to: 'pages#index'
     resources :posts
+    resources :works
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

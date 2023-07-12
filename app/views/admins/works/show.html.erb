@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name zh:</strong>
+  <%= @work.name_zh %>
+</p>
+
+<p>
+  <strong>Name en:</strong>
+  <%= @work.name_en %>
+</p>
+
+<p>
+  <strong>Site url:</strong>
+  <%= @work.site_url %>
+</p>
+
+<p>
+  <strong>Desc zh:</strong>
+  <%= @work.desc_zh %>
+</p>
+
+<p>
+  <strong>Desc en:</strong>
+  <%= @work.desc_en %>
+</p>
+
+<%= link_to 'Edit', edit_admins_work_path(@work) %> |
+<%= link_to 'Back', admins_works_path %>
