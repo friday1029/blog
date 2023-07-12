@@ -1,0 +1,26 @@
+<div class="row page-titles">
+  <div class="col-md-5 col-12 align-self-center">
+    <h3 class="text-themecolor mb-0"><%= t('admin.post.post') %> <small><%= t('admin.list') %></small></h3>
+  </div>
+  <div class="col-md-7 col-12 align-self-center d-md-block">
+    <!-- breadcrumb -->
+    <div class="d-md-flex justify-content-end">
+    <ol class="breadcrumb mb-0">
+      <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+      <li class="breadcrumb-item active"><%= t('admin.post.post') %></li>
+    </ol>
+    </div>
+  </div>
+</div> <!-- /page-titles -->
+<!-- Page container-fluid -->
+<div class="container-fluid">
+  <div class="col-md-4 control-btns text-left">
+    <%= link_to "新增文章", new_admins_post_path, class: 'btn btn-primary' %>
+  </div>
+  <!-- Full Table -->
+  <div class="card">
+    <%= render 'fulltable' %>
+  </div> <!-- /card -->
+  <!-- END Full Table -->
+</div> <!-- /container-fluid -->
+<!-- END container-fluid -->
