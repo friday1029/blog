@@ -1,26 +1,33 @@
-<div class="row page-titles">
-  <div class="col-md-5 col-12 align-self-center">
-    <h3 class="text-themecolor mb-0"><%= t('admin.post.post') %> <small><%= t('admin.list') %></small></h3>
-  </div>
-  <div class="col-md-7 col-12 align-self-center d-md-block">
-    <!-- breadcrumb -->
-    <div class="d-md-flex justify-content-end">
-    <ol class="breadcrumb mb-0">
-      <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-      <li class="breadcrumb-item active"><%= t('admin.post.post') %></li>
-    </ol>
-    </div>
-  </div>
-</div> <!-- /page-titles -->
-<!-- Page container-fluid -->
-<div class="container-fluid">
-  <div class="col-md-4 control-btns text-left">
-    <%= link_to "新增文章", new_admins_post_path, class: 'btn btn-primary' %>
-  </div>
-  <!-- Full Table -->
-  <div class="card">
-    <%= render 'fulltable' %>
-  </div> <!-- /card -->
-  <!-- END Full Table -->
-</div> <!-- /container-fluid -->
-<!-- END container-fluid -->
+<p id="notice"><%= notice %></p>
+
+<h1>Admins Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title zh</th>
+      <th>Title en</th>
+      <th>Content zh</th>
+      <th>Content en</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.title_zh %></td>
+        <td><%= post.title_en %></td>
+        <td><%= post.content_zh %></td>
+        <td><%= post.content_en %></td>
+        <td><%= link_to 'Show', admins_post_path(post) %></td>
+        <td><%= link_to 'Edit', edit_admins_post_path(post) %></td>
+        <td><%= link_to 'Destroy', admins_post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admins Post', new_admins_post_path %>
