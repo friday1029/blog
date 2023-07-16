@@ -5,3 +5,5 @@
 
 require("script/admins")
 require("stylesheets/admins/admin.scss")
+
+import "../common/quill-editor/quill-editor"

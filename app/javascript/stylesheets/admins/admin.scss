@@ -1,4 +1,6 @@
 @import "~bootstrap/scss/bootstrap.scss";
+@import '../../packs/common/quill-editor/editor.scss';
+
 /*
  * Sidebar
  */
@@ -133,3 +135,7 @@ main {
 .navbar .form-control {
   padding: .75rem 1rem;
 } 
+
+textarea.article-content {
+  display: none;
+}

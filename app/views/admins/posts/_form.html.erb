@@ -23,12 +23,16 @@
 
   <div class="field">
     <%= form.label :content_zh %>
-    <%= form.text_area :content_zh %>
+    <div class="validation-input">
+      <%= editor(form.object, :content_zh) %>
+    </div>
   </div>
 
   <div class="field">
     <%= form.label :content_en %>
-    <%= form.text_area :content_en %>
+    <div class="validation-input">
+      <%= editor(form.object, :content_en) %>
+    </div>
   </div>
 
   <div class="actions">

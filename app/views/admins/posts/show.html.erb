@@ -12,12 +12,12 @@
 
 <p>
   <strong>Content zh:</strong>
-  <%= @post.content_zh %>
+  <%= sanitize @post.content_zh %>
 </p>
 
 <p>
   <strong>Content en:</strong>
-  <%= @post.content_en %>
+  <%= sanitize @post.content_en %>
 </p>
 
 <%= link_to 'Edit', edit_admins_post_path(@post) %> |

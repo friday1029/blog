@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Admins Posts</h1>
+<h1>Posts</h1>
 
 <table>
   <thead>
@@ -18,8 +18,8 @@
       <tr>
         <td><%= post.title_zh %></td>
         <td><%= post.title_en %></td>
-        <td><%= post.content_zh %></td>
-        <td><%= post.content_en %></td>
+        <td><%= strip_tags(post.content_zh).truncate(50) %></td>
+        <td><%= strip_tags(post.content_en).truncate(50) %></td>
         <td><%= link_to 'Show', admins_post_path(post) %></td>
         <td><%= link_to 'Edit', edit_admins_post_path(post) %></td>
         <td><%= link_to 'Destroy', admins_post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Admins Post', new_admins_post_path %>
+<%= link_to 'New Post', new_admins_post_path %>
