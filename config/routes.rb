@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  namespace :api do
+    namespace :v1 do
+      post :upload_image, to: 'editor_image_helper#upload_image'
+    end
+  end
   devise_for :admins
   root 'pages#index'
   resources :posts, only: [:index, :show]
