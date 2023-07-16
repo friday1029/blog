@@ -11,24 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field mb-3">
     <%= form.label :title_zh %>
-    <%= form.text_field :title_zh %>
+    <%= form.text_field :title_zh, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field mb-3">
     <%= form.label :title_en %>
-    <%= form.text_field :title_en %>
+    <%= form.text_field :title_en, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field mb-3">
     <%= form.label :content_zh %>
     <div class="validation-input">
       <%= editor(form.object, :content_zh) %>
     </div>
   </div>
 
-  <div class="field">
+  <div class="field mb-3">
     <%= form.label :content_en %>
     <div class="validation-input">
       <%= editor(form.object, :content_en) %>

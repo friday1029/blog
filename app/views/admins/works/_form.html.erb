@@ -11,29 +11,33 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field mb-3">
     <%= form.label :name_zh %>
-    <%= form.text_field :name_zh %>
+    <%= form.text_field :name_zh, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field mb-3">
     <%= form.label :name_en %>
-    <%= form.text_field :name_en %>
+    <%= form.text_field :name_en, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field mb-3">
     <%= form.label :site_url %>
-    <%= form.text_field :site_url %>
+    <%= form.text_field :site_url, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field mb-3">
     <%= form.label :desc_zh %>
-    <%= form.text_area :desc_zh %>
+    <div class="validation-input">
+      <%= editor(form.object, :desc_zh) %>
+    </div>
   </div>
 
-  <div class="field">
+  <div class="field mb-3">
     <%= form.label :desc_en %>
-    <%= form.text_area :desc_en %>
+    <div class="validation-input">
+      <%= editor(form.object, :desc_en) %>
+    </div>
   </div>
 
   <div class="actions">
