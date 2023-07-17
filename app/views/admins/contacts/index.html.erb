@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Contacts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= contact.id %></td>
+        <td><%= contact.name %></td>
+        <td><%= contact.email %></td>
+        <td><%= (strip_tags(contact.content).truncate(50)) if contact.content.present? %></td>
+        <td>
+          <%= link_to 'Show', [:admins, contact] %>
+          <%= link_to 'Edit', edit_admins_contact_path(contact) %>
+          <%= link_to 'Destroy', [:admins, contact], method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contact', new_admins_contact_path %>

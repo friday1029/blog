@@ -11,11 +11,12 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   get 'contact', to: 'pages#contact'
 
-  namespace :admins, path: 'yellow_mouse_3847' do 
+  namespace :admins, path: 'yellow_mouse_3847' do
     get '/', to: 'pages#index'
     resources :posts
     resources :works
     resources :page_blocks
+    resources :contacts
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

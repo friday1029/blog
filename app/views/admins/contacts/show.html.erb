@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @contact.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @contact.email %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%== nl2br @contact.content %>
+</p>
+
+<%= link_to 'Edit', edit_admins_contact_path(@contact) %> |
+<%= link_to 'Back', admins_contacts_path %>
