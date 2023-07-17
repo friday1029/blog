@@ -1,0 +1,41 @@
+<%= form_with(model: [:admins, page_block]) do |form| %>
+  <% if page_block.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(page_block.errors.count, "error") %> prohibited this page_block from being saved:</h2>
+
+      <ul>
+        <% page_block.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field mb-3">
+    <%= form.label :meta_key %>
+    <%= form.text_field :meta_key, class: 'form-control' %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :content_zh %>
+    <div class="validation-input">
+      <%= editor(form.object, :content_zh) %>
+    </div>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :content_en %>
+    <div class="validation-input">
+      <%= editor(form.object, :content_en) %>
+    </div>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :note %>
+    <%= form.text_field :note, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

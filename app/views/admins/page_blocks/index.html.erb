@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Page Block</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Meta Key</th>
+      <th>Content zh</th>
+      <th>Content en</th>
+      <th>Note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @page_blocks.each do |page_block| %>
+      <tr>
+        <td><%= page_block.meta_key %></td>
+        <td><%= strip_tags(page_block.content_zh).truncate(50) if page_block.content_zh.present? %></td>
+        <td><%= strip_tags(page_block.content_en).truncate(50) if page_block.content_en.present? %></td>
+        <td><%= page_block.note %></td>
+        <td>
+          <%= link_to 'Show', admins_page_block_path(page_block) %>
+          <%= link_to 'Edit', edit_admins_page_block_path(page_block) %>
+          <%= link_to 'Destroy', admins_page_block_path(page_block), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_admins_page_block_path %>

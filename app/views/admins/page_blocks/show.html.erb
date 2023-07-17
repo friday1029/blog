@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Meta Key:</strong>
+  <%= @page_block.meta_key %>
+</p>
+
+<p>
+  <strong>Content zh:</strong>
+  <%= sanitize @page_block.content_zh %>
+</p>
+
+<p>
+  <strong>Content en:</strong>
+  <%= sanitize @page_block.content_en %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @page_block.note %>
+</p>
+
+<%= link_to 'Edit', edit_admins_page_block_path(@page_block) %> |
+<%= link_to 'Back', admins_page_blocks_path %>
