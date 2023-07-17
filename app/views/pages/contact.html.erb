@@ -1,0 +1,40 @@
+<div class="row g-5">
+  <article class="about">
+    <h2 class="display-5 link-body-emphasis mb-1">聯絡我</h2>
+    <%= image_tag 'https://picsum.photos/1600/900', width: '100%' %>
+    <h2>聯絡我注意事項</h2>
+    <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
+    <h3>Sub-heading</h3>
+    <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
+    <pre><code>Example code block</code></pre>
+    <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
+  </article>
+</div>
+<hr class="my-4">
+<div class="row g-5">
+  <article class="contact-me">
+    <form class="needs-validation" novalidate="">
+      <div class="row g-3">
+        <div class="col-12">
+          <label for="name" class="form-label">你的姓名</label>
+          <input type="text" class="form-control" id="name" placeholder="" value="" required="">
+          <div class="invalid-feedback">
+            姓名為必填
+          </div>
+        </div>
+        <div class="col-12">
+          <label for="email" class="form-label">你的Email</label>
+          <input type="email" class="form-control" id="email" placeholder="you@example.com">
+          <div class="invalid-feedback">
+            Email為必填
+          </div>
+        </div>
+        <div class="col-12">
+          <label for="content" class="form-label">內容</label>
+          <textarea class="form-control" name="content" id="content" rows="10"></textarea>
+        </div>
+        <button class="w-100 btn btn-primary btn-lg" type="submit">送出</button>
+      </div>
+    </form>
+  </article>
+</div>
