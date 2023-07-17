@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Meta Key</th>
       <th>Content zh</th>
       <th>Content en</th>
@@ -16,6 +17,7 @@
   <tbody>
     <% @page_blocks.each do |page_block| %>
       <tr>
+        <td><%= page_block.id %></td>
         <td><%= page_block.meta_key %></td>
         <td><%= strip_tags(page_block.content_zh).truncate(50) if page_block.content_zh.present? %></td>
         <td><%= strip_tags(page_block.content_en).truncate(50) if page_block.content_en.present? %></td>

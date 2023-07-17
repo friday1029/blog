@@ -11,4 +11,5 @@
 #  updated_at :datetime         not null
 #
 class PageBlock < ApplicationRecord
+  validates :meta_key, presence: true, uniqueness: true
 end

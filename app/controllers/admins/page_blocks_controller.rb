@@ -3,7 +3,12 @@ class Admins::PageBlocksController < AdminController
 
   # GET /page_blocks or /page_blocks.json
   def index
-    @page_blocks = PageBlock.all
+    if allow_meta_key.include?(params[:meta_key])
+      @page_block = PageBlock.find_or_create_by(meta_key: params[:meta_key])
+      render :show
+    else
+      @page_blocks = PageBlock.all
+    end
   end
 
   # GET /page_blocks/1 or /page_blocks/1.json
@@ -58,6 +63,10 @@ class Admins::PageBlocksController < AdminController
   end
 
   private
+    def allow_meta_key
+      %W(about)
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_page_block
       @page_block = PageBlock.find(params[:id])
