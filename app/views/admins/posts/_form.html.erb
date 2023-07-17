@@ -1,4 +1,4 @@
-<%= form_with(model: [:admins, post]) do |form| %>
+<%= form_with(model: [:admins, post], multipart: true) do |form| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -12,6 +12,12 @@
   <% end %>
 
   <div class="field mb-3">
+    <%= form.label :cover_image %><br>
+    <%= image_tag(form.object.cover_image_url, height: 100) if form.object.cover_image.present? %>
+    <%= form.file_field :cover_image, class: 'form-control' %>
+  </div>
+
+  <div class="field mb-3">
     <%= form.label :title_zh %>
     <%= form.text_field :title_zh, class: 'form-control' %>
   </div>
@@ -19,6 +25,16 @@
   <div class="field mb-3">
     <%= form.label :title_en %>
     <%= form.text_field :title_en, class: 'form-control' %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :intro_zh %>
+    <%= form.text_area :intro_zh, class: 'form-control', rows: 5 %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :intro_en %>
+    <%= form.text_area :intro_en, class: 'form-control', rows: 5 %>
   </div>
 
   <div class="field mb-3">
