@@ -65,6 +65,6 @@ class Admins::WorksController < AdminController
 
     # Only allow a list of trusted parameters through.
     def work_params
-      params.require(:work).permit(:name_zh, :name_en, :site_url, :desc_zh, :desc_en)
+      params.require(:work).permit(:name_zh, :name_en, :site_url, :desc_zh, :desc_en, :logo, :intro_zh, :intro_en)
     end
 end
