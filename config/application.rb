@@ -18,5 +18,6 @@ module Blog
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    Time::DATE_FORMATS.merge!(:date => '%F', :time => '%T', :datetime => '%F %T' )
   end
 end
