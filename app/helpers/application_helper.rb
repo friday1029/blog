@@ -1,6 +1,6 @@
 module ApplicationHelper
   def image_tag(source, options = {})
-    return '' if source.blank?
+    source = 'https://picsum.photos/1600/900' if source.blank?
     super
   end
 end

@@ -1,8 +1,13 @@
-<%= render 'category_nav' %>
+<%#= render 'category_nav' %>
 <div class="row g-5">
   <div class="col-md-9">
     <article class="blog-post">
-      <h2 class="display-5 link-body-emphasis mb-1">Sample blog post</h2>
+      <h2 class="display-5 link-body-emphasis mb-1"><%= @post.title_zh %></h2>
+      <p class="blog-post-meta"><%= @post.updated_at.to_s(:date) %></p>
+      <%= image_tag @post.cover_image_url , width: '100%', height: '100%' %>
+      <%== @post.content_zh %>
+<% if false %>
+      <h2 class="display-5 link-body-emphasis mb-1"></h2>
       <p class="blog-post-meta">January 1, 2021 by <a href="#">Mark</a></p>
       <%= image_tag 'https://picsum.photos/1600/900', width: '100%', height: '100%' %>
       <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, lists, tables, images, code, and more are all supported as expected.</p>
@@ -53,11 +58,16 @@
       <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
       <pre><code>Example code block</code></pre>
       <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
+<% end %>
     </article>
 
     <nav class="blog-pagination" aria-label="Pagination">
-      <a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
-      <a class="btn btn-outline-secondary rounded-pill disabled">Newer</a>
+      <%= link_to("Older", post_path(@post.older), class: 'btn btn-outline-secondary rounded-pill') if @post.older %>
+      <%= link_to("Newer", post_path(@post.newer), class: 'btn btn-outline-primary rounded-pill') if @post.newer %>
+      <% if false %>
+        <a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
+        <a class="btn btn-outline-secondary rounded-pill disabled">Newer</a>
+      <% end %>
     </nav>
   </div>
 
@@ -66,13 +76,13 @@
       <div>
         <h4 class="fst-italic">Recent posts</h4>
         <ul class="list-unstyled">
-<% 3.times.each do |i| %>
+<% @relative_posts.each do |relative_post| %>
           <li>
             <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-              <%= image_tag "https://picsum.photos/96?random=#{i}", class: 'bd-placeholder-img', height: 96 %>
+              <%= image_tag relative_post.cover_image_url, class: 'bd-placeholder-img', height: 96 %>
               <div class="col-lg-8">
-                <h6 class="mb-0"><%= i %> - Example blog post title</h6>
-                <small class="text-body-secondary">January 15, 2023</small>
+                <h6 class="mb-0"><%= relative_post.title_zh %></h6>
+                <small class="text-body-secondary"><%= relative_post.updated_at.to_s(:date) %></small>
               </div>
             </a>
           </li>

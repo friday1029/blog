@@ -3,7 +3,7 @@ class Admins::PostsController < AdminController
 
   # GET /admins/posts or /admins/posts.json
   def index
-    @posts = Post.all
+    @posts = Post.order :id
   end
 
   # GET /admins/posts/1 or /admins/posts/1.json

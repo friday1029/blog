@@ -15,4 +15,26 @@
 #
 class Post < ApplicationRecord
   mount_base64_uploader :cover_image, CoverImageUploader
+
+
+  def older
+    if self.id == Post.first.id
+      nil
+    else
+      item_ids = Post.order(:id).ids
+      older_id = item_ids[item_ids.index(self.id) - 1]
+      Post.find(older_id)
+    end
+  end
+
+  def newer
+    if self.id == Post.last.id
+      nil
+    else
+      item_ids = Post.order(:id).ids
+      newer_id = item_ids[item_ids.index(self.id) + 1]
+      Post.find(newer_id)
+    end
+  end
+
 end

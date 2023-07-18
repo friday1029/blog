@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Cover image</th>
       <th>Title zh</th>
       <th>Title en</th>
@@ -17,6 +18,7 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
+        <td><%= post.id %></td>
         <td><%= image_tag(post.cover_image_url, height: 100) %></td>
         <td><%= post.title_zh %></td>
         <td><%= post.title_en %></td>
