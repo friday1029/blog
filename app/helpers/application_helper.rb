@@ -1,6 +1,8 @@
 module ApplicationHelper
   def image_tag(source, options = {})
-    source = 'https://picsum.photos/1600/900' if source.blank?
+    if source.blank?
+      source = options[:fake] == true ? 'https://fakeimg.pl/350x200/?text=Fake_image' : (return '')
+    end
     super
   end
 
