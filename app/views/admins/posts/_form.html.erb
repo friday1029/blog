@@ -13,7 +13,7 @@
 
   <div class="field mb-3">
     <%= form.label :cover_image %><br>
-    <%= image_tag(form.object.cover_image_url, height: 100) if form.object.cover_image.present? %>
+    <%= image_tag form.object.cover_image_url, height: 100 %>
     <%= form.file_field :cover_image, class: 'form-control' %>
   </div>
 
