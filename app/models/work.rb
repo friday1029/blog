@@ -22,8 +22,8 @@ class Work < ApplicationRecord
 
   private
 
-  def remove_html_tags_from_desc
-    self.desc_zh = ActionView::Base.full_sanitizer.sanitize(self.desc_zh)
-    self.desc_en = ActionView::Base.full_sanitizer.sanitize(self.desc_en)
+  def remove_html_tags_from_intro
+    self.intro_zh = ActionView::Base.full_sanitizer.sanitize(self.intro_zh)
+    self.intro_en = ActionView::Base.full_sanitizer.sanitize(self.intro_en)
   end
 end
