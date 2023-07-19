@@ -5,10 +5,10 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Logo</th>
       <th>Name zh</th>
       <th>Name en</th>
-      <th>Site url</th>
       <th>Intro zh</th>
       <th>Intro en</th>
       <th colspan="3"></th>
@@ -18,10 +18,10 @@
   <tbody>
     <% @works.each do |work| %>
       <tr>
+        <td><%= work.id %></td>
         <td><%= image_tag work.logo_url, height: 100 %></td>
         <td><%= work.name_zh %></td>
         <td><%= work.name_en %></td>
-        <td><%= work.site_url %></td>
         <td><%= nl2br(work.intro_zh).truncate(100) if work.intro_zh.present? %></td>
         <td><%= nl2br(work.intro_en).truncate(100) if work.intro_en.present? %></td>
         <td><%= link_to 'Show', admins_work_path(work) %></td>

@@ -1,8 +1,8 @@
 <div class="row g-4 py-3">
   <h2 class="pb-2 border-bottom">Side Projects</h2>
   <div class="row g-3 py-1 row-cols-1 row-cols-lg-3">
-<% 3.times.each do |i|  %>
-  <%= render 'feature_col', link_path: work_path(0) %>
+<% @works.each do |work|  %>
+  <%= render 'feature_col', work: work %>
 <% end %>
   </div>
 <div>
@@ -10,7 +10,7 @@
   <h2 class="pb-2 border-bottom">商業作品</h2>
   <div class="row g-3 py-1 row-cols-1 row-cols-lg-3">
 <% 6.times.each do |i|  %>
-    <%= render 'feature_col', link_path: work_path(0) %>
+    <%#= render 'feature_col', link_path: work_path(0) %>
 <% end %>
   </div>
 <div>

@@ -3,7 +3,7 @@ class Admins::WorksController < AdminController
 
   # GET /admins/works or /admins/works.json
   def index
-    @works = Work.all
+    @works = Work.order :id
   end
 
   # GET /admins/works/1 or /admins/works/1.json
@@ -65,6 +65,8 @@ class Admins::WorksController < AdminController
 
     # Only allow a list of trusted parameters through.
     def work_params
-      params.require(:work).permit(:name_zh, :name_en, :site_url, :desc_zh, :desc_en, :logo, :intro_zh, :intro_en)
+      params.require(:work).permit(:name_zh, :name_en, :site_url, :desc_zh, :desc_en, :logo, :intro_zh, :intro_en,
+        site_screenshots_attributes: [:id, :image, :_destroy], 
+      )
     end
 end

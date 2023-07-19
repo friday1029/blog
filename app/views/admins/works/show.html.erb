@@ -40,5 +40,13 @@
   <%== @work.desc_en %>
 </p>
 
+<p>
+  <strong>網站截圖:</strong>
+<% @work.site_screenshots.each do |site_screenshot| %>
+  <%= image_tag site_screenshot.image_url, height: 100 %>
+<% end %>
+</p>
+
+
 <%= link_to 'Edit', edit_admins_work_path(@work) %> |
 <%= link_to 'Back', admins_works_path %>

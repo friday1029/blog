@@ -16,7 +16,9 @@
 #
 class Work < ApplicationRecord
   mount_base64_uploader :logo, LogoUploader
-  before_save :remove_html_tags_from_content
+  before_save :remove_html_tags_from_intro
+  has_many :site_screenshots, inverse_of: :work, dependent: :destroy
+  accepts_nested_attributes_for :site_screenshots, reject_if: :all_blank, allow_destroy: true
 
   private
 

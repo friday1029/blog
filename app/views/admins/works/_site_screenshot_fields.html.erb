@@ -1,0 +1,9 @@
+<div class="nested-fields">
+  <div class="field mb-3">
+    <%= f.file_field :image, class: 'form-control' %>
+    <%= image_tag f.object.image_url, height: 100 %>
+  </div>
+  <div class="field mb-3">
+    <%= link_to_remove_association "移除截圖" , f , { class: "btn btn-danger btn-xs" } %>
+  </div>
+</div>

@@ -55,6 +55,17 @@
     </div>
   </div>
 
+  <div class="row1" id="site_screenshots_block">
+    <h4><%= "網站截圖" %></h4>
+    <%= form.fields_for :site_screenshots do |t| %>
+      <%= render 'site_screenshot_fields', f: t %>
+    <% end %>
+    <div id="site_screenshots_block_new_<%= form.index %>" class="site_screenshots_block_new"></div>
+    <div class="field mb-3">
+      <%= link_to_add_association "新增網站截圖", form , :site_screenshots, { :class => 'add-link', data: { ssociation_insertion_method: "append", association_insertion_node: "#site_screenshots_block_new_#{form.index}" }} %>
+    </div>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

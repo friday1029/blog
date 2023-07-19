@@ -91,6 +91,7 @@ GEM
       carrierwave (>= 2.2.1)
       marcel (~> 1.0.0)
       mime-types (~> 3.0)
+    cocoon (1.2.15)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
@@ -262,6 +263,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   carrierwave
   carrierwave-base64
+  cocoon
   devise (~> 4.9, >= 4.9.2)
   foreman
   jbuilder (~> 2.7)

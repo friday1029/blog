@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_07_18_090732) do
+ActiveRecord::Schema.define(version: 2023_07_18_094207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,14 @@ ActiveRecord::Schema.define(version: 2023_07_18_090732) do
     t.text "intro_en"
   end
 
+  create_table "site_screenshots", force: :cascade do |t|
+    t.text "image"
+    t.bigint "work_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["work_id"], name: "index_site_screenshots_on_work_id"
+  end
+
   create_table "works", force: :cascade do |t|
     t.string "name_zh"
     t.string "name_en"
@@ -75,4 +83,5 @@ ActiveRecord::Schema.define(version: 2023_07_18_090732) do
     t.text "intro_en"
   end
 
+  add_foreign_key "site_screenshots", "works"
 end
