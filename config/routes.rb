@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :works, only: [:index, :show]
   get 'about', to: 'pages#about'
   get 'contact', to: 'pages#contact'
+  post 'contact', to: 'pages#contact_create'
 
   namespace :admins, path: 'yellow_mouse_3847' do
     get '/', to: 'pages#index'

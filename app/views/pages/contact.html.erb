@@ -13,28 +13,28 @@
 <hr class="my-4">
 <div class="row g-5">
   <article class="contact-me">
-    <form class="needs-validation" novalidate="">
+    <%= form_with(url: contact_path, scope: 'contact',class: 'needs-validation') do |f| %>
       <div class="row g-3">
         <div class="col-12">
-          <label for="name" class="form-label">你的姓名</label>
-          <input type="text" class="form-control" id="name" placeholder="" value="" required="">
+          <%= f.label :name, class: 'form-lable' %>
+          <%= f.text_field :name, class: 'form-control', required: true %>
           <div class="invalid-feedback">
             姓名為必填
           </div>
         </div>
         <div class="col-12">
-          <label for="email" class="form-label">你的Email</label>
-          <input type="email" class="form-control" id="email" placeholder="you@example.com">
+          <%= f.label :email, class: 'form-lable' %>
+          <%= f.text_field :email, class: 'form-control', placeholder: 'you@example.com', required: true %>
           <div class="invalid-feedback">
             Email為必填
           </div>
         </div>
         <div class="col-12">
-          <label for="content" class="form-label">內容</label>
-          <textarea class="form-control" name="content" id="content" rows="10"></textarea>
+          <%= f.label :content, class: 'form-lable' %>
+          <%= f.text_area :content, class: 'form-control', rows: 10, required: true %>
         </div>
         <button class="w-100 btn btn-primary btn-lg" type="submit">送出</button>
       </div>
-    </form>
+    <% end %>
   </article>
 </div>
