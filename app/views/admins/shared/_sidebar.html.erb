@@ -13,6 +13,12 @@
           </a>
         </li>
         <li class="nav-item">
+          <%= link_to admins_banners_path, class: "nav-link d-flex align-items-center gap-2" do %>
+            <svg class="bi"><use xlink:href="#file-earmark"/></svg>
+            首頁 Banner
+          <% end %>
+        </li>
+        <li class="nav-item">
           <%= link_to admins_page_blocks_path(meta_key: 'about'), class: "nav-link d-flex align-items-center gap-2" do %>
             <svg class="bi"><use xlink:href="#file-earmark"/></svg>
             關於我

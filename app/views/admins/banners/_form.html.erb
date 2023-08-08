@@ -1,0 +1,43 @@
+<%= form_with(model: [:admins, banner]) do |form| %>
+  <% if banner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(banner.errors.count, "error") %> prohibited this banner from being saved:</h2>
+
+      <ul>
+        <% banner.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field mb-3">
+    <%= form.label :image %><br>
+    <%= image_tag form.object.image_url, height: 100 %>
+    <%= form.file_field :image, class: 'form-control' %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :title_zh %>
+    <%= form.text_field :title_zh, class: 'form-control' %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :title_en %>
+    <%= form.text_field :title_en, class: 'form-control' %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :subtitle_zh %>
+    <%= form.text_field :subtitle_zh, class: 'form-control' %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :subtitle_en %>
+    <%= form.text_field :subtitle_en, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

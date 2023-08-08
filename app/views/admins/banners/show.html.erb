@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title zh:</strong>
+  <%= @banner.title_zh %>
+</p>
+
+<p>
+  <strong>Title en:</strong>
+  <%= @banner.title_en %>
+</p>
+
+<p>
+  <strong>Subtitle zh:</strong>
+  <%= @banner.subtitle_zh %>
+</p>
+
+<p>
+  <strong>Sutitle en:</strong>
+  <%= @banner.subtitle_en %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag(@banner.image_url, height: 100) %>
+</p>
+
+<%= link_to 'Edit', edit_admins_banner_path(@banner) %> |
+<%= link_to 'Back', admins_banners_path %>
