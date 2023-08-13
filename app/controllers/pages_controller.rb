@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
   def index
     @banners = Banner.all
+    @posts = Post.last 3
+    @works = Work.last 4
   end
 
   def about

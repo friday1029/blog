@@ -1,4 +1,8 @@
-<% col_name = local_assigns[:col_name].presence || 'image' # 預設欄位名為 image %>
+<% col_names = local_assigns[:col_names].presence || {} %>
+<% image_col = col_names[:image].presence || 'image' # 預設欄位名為 image %>
+<% title_col = col_names[:title].presence || 'title' # 預設欄位名為 title %>
+<% subtitle_col = col_names[:subtitle].presence || 'subtitle' # 預設欄位名為 subtitle %>
+
 <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel" data-bs-theme="light">
   <div class="carousel-indicators">
 <% carousel_items.size.times.each do |i| %>
@@ -12,45 +16,14 @@
   <div class="carousel-inner">
 <% carousel_items.each_with_index do |item, i| %>
     <div class="carousel-item <%= 'active' if i == 0 %>">
-      <%= image_tag item.try(col_name).try('thumb').try('url'), width: '100%' %>
+      <%= image_tag item.try(image_col).try('thumb').try('url'), width: '100%' %>
       <div class="container">
         <div class="carousel-caption text-start">
-            <h1>Example headline.</h1>
-          <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
-          <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-        </div>
-      </div>
-    </div>
-<% end %>
-
+            <h1><%= item.try("#{title_col}_zh") %></h1>
+          <p class="opacity-75"><%= item.try("#{subtitle_col}_zh") %></p>
 <% if false %>
-    <div class="carousel-item active">
-      <%= image_tag 'https://picsum.photos/1600/900', width: '100%' %>
-      <div class="container">
-        <div class="carousel-caption text-start">
-          <h1>Example headline.</h1>
-          <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
           <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <%= image_tag 'https://picsum.photos/1600/900', width: '100%' %>
-      <div class="container">
-        <div class="carousel-caption">
-          <h1>Another example headline.</h1>
-          <p>Some representative placeholder content for the second slide of the carousel.</p>
-          <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <%= image_tag 'https://picsum.photos/1600/900', width: '100%' %>
-      <div class="container">
-        <div class="carousel-caption text-end">
-          <h1>One more for good measure.</h1>
-          <p>Some representative placeholder content for the third slide of this carousel.</p>
-          <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+<% end %>
         </div>
       </div>
     </div>
