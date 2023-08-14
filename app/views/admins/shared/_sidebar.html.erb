@@ -8,37 +8,37 @@
       <ul class="nav flex-column">
         <li class="nav-item">
           <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="#">
-            <svg class="bi"><use xlink:href="#house-fill"/></svg>
+            <%= image_pack_tag "admins/house-fill.svg", class: 'bi' %>
             Dashboard
           </a>
         </li>
         <li class="nav-item">
           <%= link_to admins_banners_path, class: "nav-link d-flex align-items-center gap-2" do %>
-            <svg class="bi"><use xlink:href="#file-earmark"/></svg>
+            <%= image_pack_tag "admins/file-earmark.svg", class: 'bi' %>
             首頁 Banner
           <% end %>
         </li>
         <li class="nav-item">
           <%= link_to admins_page_blocks_path(meta_key: 'about'), class: "nav-link d-flex align-items-center gap-2" do %>
-            <svg class="bi"><use xlink:href="#file-earmark"/></svg>
+            <%= image_pack_tag "admins/file-earmark.svg", class: 'bi' %>
             關於我
           <% end %>
         </li>
         <li class="nav-item">
           <%= link_to admins_posts_path, class: "nav-link d-flex align-items-center gap-2" do %>
-            <svg class="bi"><use xlink:href="#file-earmark"/></svg>
+            <%= image_pack_tag "admins/file-earmark.svg", class: 'bi' %>
             文章
           <% end %>
         </li>
         <li class="nav-item">
           <%= link_to admins_works_path, class: "nav-link d-flex align-items-center gap-2" do %>
-            <svg class="bi"><use xlink:href="#file-earmark"/></svg>
+            <%= image_pack_tag "admins/file-earmark.svg", class: 'bi' %>
             作品集
           <% end %>
         </li>
         <li class="nav-item">
           <%= link_to admins_contacts_path, class: "nav-link d-flex align-items-center gap-2" do %>
-            <svg class="bi"><use xlink:href="#file-earmark"/></svg>
+            <%= image_pack_tag "admins/file-earmark.svg", class: 'bi' %>
             聯絡我
           <% end %>
         </li>
@@ -49,19 +49,19 @@
       <ul class="nav flex-column mb-auto">
         <li class="nav-item">
           <a class="nav-link d-flex align-items-center gap-2" href="#">
-            <svg class="bi"><use xlink:href="#gear-wide-connected"/></svg>
+            <%= image_pack_tag "admins/gear-wide-connected.svg", class: 'bi' %>
             Settings
           </a>
         </li>
         <li class="nav-item">
           <%= link_to admins_page_blocks_path, class:"nav-link d-flex align-items-center gap-2" do %>
-            <svg class="bi"><use xlink:href="#gear-wide-connected"/></svg>
+            <%= image_pack_tag "admins/gear-wide-connected.svg", class: 'bi' %>
             Page Blocks
           <% end %>
         </li>
         <li class="nav-item">
           <%= link_to destroy_admin_session_path, class: "nav-link d-flex align-items-center gap-2", method: :delete do %>
-            <svg class="bi"><use xlink:href="#door-closed"/></svg>
+            <%= image_pack_tag "admins/door-closed.svg", class: 'bi' %>
             Sign out
           <% end %>
         </li>
