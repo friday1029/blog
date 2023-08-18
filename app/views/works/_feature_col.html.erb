@@ -1,9 +1,16 @@
 <div class="feature col">
   <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-    <%= image_tag work.logo_url, fake: true, height: 64 %>
+    <%= image_pack_tag 'collection.svg', class: 'bi', width: 30, height: 30 %>
+    <%#= image_tag work.logo_url, fake: true, height: 64 %>
   </div>
   <h3 class="fs-2 text-body-emphasis"><%= work.name_zh %></h3>
   <p style="height: 7rem"><%= strip_tags(work.intro_zh).truncate(100) if work.intro_zh.present? %></p>
-  <%= link_to "前往網站", url_format(work.site_url), target: '_blank', class: 'icon-link' %> / 
-  <%= link_to "詳細介紹", work_path(work), class: 'icon-link' %>
+  <div class="row">
+    <div class="col text-start">
+      <%= link_to "詳細介紹", work_path(work), class: 'link-underline link-underline-opacity-0' %>
+    </div>
+    <div class="col text-end">
+      <%= link_to "前往網站", url_format(work.site_url), target: '_blank', class: 'link-underline link-underline-opacity-0 link-secondary' %>
+    </div>
+  </div>
 </div>
