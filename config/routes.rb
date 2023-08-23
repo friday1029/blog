@@ -21,5 +21,7 @@ Rails.application.routes.draw do
     resources :banners
   end
 
+  match '*path', to: "application#render_404", via: [:get, :put, :post, :delete, :options]
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
