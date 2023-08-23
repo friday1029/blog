@@ -4,7 +4,7 @@ Rails.application.routes.draw do
       post :upload_image, to: 'editor_image_helper#upload_image'
     end
   end
-  devise_for :admins
+  devise_for :admins, path: 'yellow_mouse_3847', controllers: { sessions: "admins/devise/sessions", registrations: "admins/devise/registrations" }
   root 'pages#index'
   resources :posts, only: [:index, :show]
   resources :works, only: [:index, :show]
