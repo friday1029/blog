@@ -39,7 +39,13 @@
         <li class="nav-item">
           <%= link_to admins_contacts_path, class: "nav-link d-flex align-items-center gap-2" do %>
             <%= image_pack_tag "admins/file-earmark.svg", class: 'bi' %>
-            聯絡我
+            聯絡我表單
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to admins_page_blocks_path(meta_key: 'contact_note'), class: "nav-link d-flex align-items-center gap-2" do %>
+            <%= image_pack_tag "admins/file-earmark.svg", class: 'bi' %>
+            聯絡我注意事項
           <% end %>
         </li>
       </ul>

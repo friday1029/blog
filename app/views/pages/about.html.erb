@@ -1,5 +1,11 @@
 <div class="row g-5">
   <article class="about">
     <%== @about.content_zh %>
+    <%= link_to 'https://github.com/friday1029', target: '_blank' do %>
+      <%= image_pack_tag 'github.svg', class: 'bi', width: 30, height: 30 %>
+    <% end %>
+        <%= link_to 'https://www.linkedin.com/in/friday1029/', target: '_blank' do %>
+      <%= image_pack_tag 'linkedin.svg', class: 'bi', width: 30, height: 30 %>
+    <% end %>
   </article>
 </div>

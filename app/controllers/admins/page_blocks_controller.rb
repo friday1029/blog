@@ -64,7 +64,7 @@ class Admins::PageBlocksController < AdminController
 
   private
     def allow_meta_key
-      %W(about)
+      %W(about contact_note)
     end
 
     # Use callbacks to share common setup or constraints between actions.

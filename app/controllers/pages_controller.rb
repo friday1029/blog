@@ -10,6 +10,7 @@ class PagesController < ApplicationController
   end
 
   def contact
+    @contact_note = PageBlock.find_or_create_by(meta_key: 'contact_note')
     @contact = Contact.new
   end
 
