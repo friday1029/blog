@@ -20,20 +20,20 @@ class Post < ApplicationRecord
   scope :published, -> { where(is_published: true) } 
   scope :default_order, -> { order(is_top: :desc, id: :asc) } 
   def older
-    if self.id == Post.first.id
+    if self.id == Post.published.order(:id).first.id
       nil
     else
-      item_ids = Post.order(:id).ids
+      item_ids = Post.published.order(:id).ids
       older_id = item_ids[item_ids.index(self.id) - 1]
       Post.find(older_id)
     end
   end
 
   def newer
-    if self.id == Post.last.id
+    if self.id == Post.published.order(:id).last.id
       nil
     else
-      item_ids = Post.order(:id).ids
+      item_ids = Post.published.order(:id).ids
       newer_id = item_ids[item_ids.index(self.id) + 1]
       Post.find(newer_id)
     end
