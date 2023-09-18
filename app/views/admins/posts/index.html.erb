@@ -7,6 +7,7 @@
     <tr>
       <th>ID</th>
       <th>is puplished</th>
+      <th>is top</th>
       <th>Cover image</th>
       <th>Title zh</th>
       <th>Title en</th>
@@ -21,6 +22,7 @@
       <tr>
         <td><%= post.id %></td>
         <td><%= post.is_published %></td>
+        <td><%= post.is_top %></td>
         <td><%= image_tag(post.cover_image_url, height: 100) %></td>
         <td><%= post.title_zh %></td>
         <td><%= post.title_en %></td>

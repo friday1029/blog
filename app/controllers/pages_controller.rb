@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def index
     @banners = Banner.all
-    @posts = Post.published.last 3
+    @posts = Post.published.default_order.first 3
     @works = Work.last 4
   end
 

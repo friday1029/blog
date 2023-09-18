@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.published.order(:id)
+    @posts = Post.published.default_order
   end
 
   def show

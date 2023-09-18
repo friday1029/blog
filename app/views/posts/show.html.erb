@@ -25,13 +25,13 @@
         <ul class="list-unstyled">
 <% @relative_posts.each do |relative_post| %>
           <li>
-            <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-              <%= image_tag relative_post.cover_image.thumb.url, class: 'bd-placeholder-img', height: 80 %>
+            <%= link_to post_path(relative_post), class: 'd-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top' do %>
+                <%= image_tag relative_post.cover_image.thumb.url, class: 'bd-placeholder-img', height: 80 %>
               <div class="col-lg-8">
                 <h6 class="mb-0"><%= relative_post.title_zh %></h6>
                 <small class="text-body-secondary"><%= relative_post.updated_at.to_s(:date) %></small>
               </div>
-            </a>
+            <% end %>
           </li>
 <% end %>
         </ul>

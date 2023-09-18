@@ -21,6 +21,10 @@
     <%= form.label :is_published, '發佈' %>
   </div>
   <div class="field mb-3">
+    <%= form.check_box :is_top %>
+    <%= form.label :is_top, '置頂' %>
+  </div>
+  <div class="field mb-3">
     <%= form.label :title_zh %>
     <%= form.text_field :title_zh, class: 'form-control' %>
   </div>

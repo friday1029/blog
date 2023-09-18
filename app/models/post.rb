@@ -9,6 +9,7 @@
 #  intro_en     :text
 #  intro_zh     :text
 #  is_published :boolean          default(FALSE)
+#  is_top       :boolean          default(FALSE)
 #  title_en     :string
 #  title_zh     :string
 #  created_at   :datetime         not null
@@ -16,8 +17,8 @@
 #
 class Post < ApplicationRecord
   mount_base64_uploader :cover_image, CoverImageUploader
-  scope :published, -> {where(is_published: true) } 
-
+  scope :published, -> { where(is_published: true) } 
+  scope :default_order, -> { order(is_top: :desc, id: :asc) } 
   def older
     if self.id == Post.first.id
       nil
