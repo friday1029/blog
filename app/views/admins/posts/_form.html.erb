@@ -16,7 +16,10 @@
     <%= image_tag form.object.cover_image_url, height: 100 %>
     <%= form.file_field :cover_image, class: 'form-control' %>
   </div>
-
+  <div class="field mb-3">
+    <%= form.check_box :is_published %>
+    <%= form.label :is_published, '發佈' %>
+  </div>
   <div class="field mb-3">
     <%= form.label :title_zh %>
     <%= form.text_field :title_zh, class: 'form-control' %>

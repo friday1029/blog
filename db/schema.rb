@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_08_08_082211) do
+ActiveRecord::Schema.define(version: 2023_09_18_092922) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2023_08_08_082211) do
     t.text "cover_image"
     t.text "intro_zh"
     t.text "intro_en"
+    t.boolean "is_published", default: false
   end
 
   create_table "site_screenshots", force: :cascade do |t|

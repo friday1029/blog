@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Cover image:</strong>
+  <%= image_tag(@post.cover_image_url, height: 100) %>
+</p>
+
+<p>
+  <strong>is published</strong>
+  <%= @post.is_published %>
+</p>
+
+<p>
   <strong>Title zh:</strong>
   <%= @post.title_zh %>
 </p>
@@ -8,6 +18,16 @@
 <p>
   <strong>Title en:</strong>
   <%= @post.title_en %>
+</p>
+
+<p>
+  <strong>Title zh:</strong>
+  <%= @post.intro_zh %>
+</p>
+
+<p>
+  <strong>Title en:</strong>
+  <%= @post.intro_en %>
 </p>
 
 <p>

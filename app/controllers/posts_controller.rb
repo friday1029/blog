@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.order(:id)
+    @posts = Post.published.order(:id)
   end
 
   def show
-    @post = Post.find(params[:id])
-    @relative_posts = Post.all.sample 3
+    @post = Post.published.find(params[:id])
+    @relative_posts = Post.published.sample 3
   end
 end
