@@ -3,7 +3,7 @@
     <article class="work">
       <h2 class="display-5 link-body-emphasis mb-1"><%= @work.name_zh %></h2>
       <%= render 'shared/carousel', carousel_items: @work.site_screenshots %>
-      <p class="work-meta">截圖日期: <%= @work.updated_at.to_s(:date) %></p>
+      <p class="work-meta">截圖日期: <%= @work.created_at.to_s(:date) %></p>
       <%== @work.desc_zh %>
 
 <% if false %>
